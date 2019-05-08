@@ -13,9 +13,7 @@ class [[eosio::contract("hooks")]] hooks : public eosio::contract {
         hooks(name receiver, name code, datastream<const char*> ds)
         :eosio::contract(receiver, code, ds)
         {}
+
         [[eosio::action]]
-        void event(
-            const string& key,
-            const string& data
-        );
+        void event(const string& auth_key, const string& data);
 };
